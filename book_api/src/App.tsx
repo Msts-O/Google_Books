@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import logo from './logo.svg';
-
+import { Path } from './routes';
 
 
 const App: React.FC = () => {
@@ -18,7 +19,7 @@ const App: React.FC = () => {
             <OfficialLink className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
               Learn React
             </OfficialLink>
-            {/*<temporaryLink to={Path.temporary}>Test Page</temporaryLink>*/}
+            <Link to={Path.temporary}>Test Page</Link>
           </Header>
         </Wrapper>
       </>
