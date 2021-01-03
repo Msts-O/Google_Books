@@ -1,18 +1,18 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import App from 'App';
-import { temporary } from './temporary';
+import App from "./App";
+import { Temporary } from "./Temporary";
 
 export const Path = {
     app: '/',
-    temporary: '/temporary',
+    temporary: '/Temporary',
 };
 
 const routes = (
     <Switch>
         <Route exact path={Path.app} component={App} />
-        <Route exact path={Path.temporary} component={temporary} />
+        <Route exact path={Path.temporary} component={Temporary} />
         <Redirect to={Path.app} />
     </Switch>
 );
