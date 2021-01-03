@@ -2,5 +2,5 @@ Google_Books
 
 Built with
 
-Typescript  --yarn 
-Docker 
+language:Typescript   
+sideprogram: yarn 
