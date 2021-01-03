@@ -4,12 +4,10 @@ import { createBrowserHistory } from 'history';
 import { Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
-import routes from 'routes';
+import routes from './routes';
 const history = createBrowserHistory();
 
 ReactDOM.render(<Router history={history}>{routes}</Router>, document.getElementById('root'));
-
-serviceWorker.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Otameshi: React.FC = () => {
-    return <Wrapper>Otameshi</Wrapper>;
+export const temporary: React.FC = () => {
+    return <Wrapper>temporary</Wrapper>;
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
