@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import App from "./App";
+import { Layout }  from "./Layout";
 import { Temporary } from "./Temporary";
 
 export const Path = {
@@ -10,11 +11,13 @@ export const Path = {
 };
 
 const routes = (
+    <Layout>
     <Switch>
         <Route exact path={Path.app} component={App} />
         <Route exact path={Path.temporary} component={Temporary} />
         <Redirect to={Path.app} />
     </Switch>
+    </Layout>
 );
 
 export default routes;
