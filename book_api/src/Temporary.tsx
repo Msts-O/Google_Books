@@ -2,6 +2,8 @@ import React , { useState }from 'react';
 import styled from 'styled-components';
 import axios from "axios";
 
+import { VolumeList } from "./models/Volume";
+
 const searchGoogleBooks = async (searchString: string) => {
     const url = 'https://www.googleapis.com/books/v1/volumes';
     const params = { q: searchString };
@@ -16,13 +18,13 @@ const searchGoogleBooks = async (searchString: string) => {
 
 export const Temporary: React.FC = () => {
     const [searchString, changeSearchString] = useState('');
-    const [searchResult, changeSearchResult] = useState<any>(null);
+    const [searchResult, changeSearchResult] = useState<VolumeList>(new VolumeList());
 
     const handleOnSearchButton = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
         const result = await searchGoogleBooks(searchString);
         if (result.isSuccess) {
-            changeSearchResult(result.data);
+            changeSearchResult(VolumeList.fromResponse(result.data));
         } else {
             window.alert(String(result.error));
         }
@@ -39,7 +41,7 @@ export const Temporary: React.FC = () => {
                 </SearchForm>
                 {searchResult && (
                     <ResultContent>
-                        {searchResult.items.map((item: any) => {
+                        {searchResult.items.map((item => {
                             return <ResultTitle key={item.id}>{item.volumeInfo.title}</ResultTitle>;
                         })}
                     </ResultContent>
