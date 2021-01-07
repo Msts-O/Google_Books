@@ -1,7 +1,7 @@
 import  { useDispatch, useSelector} from "react-redux";
 import  { State } from "../../reducers";
 import  { GoogleBooksActions } from "../../actions/googleBooks";
-import {useState} from "react";
+import  { useState } from "react";
 
 export GoogleBooks: React.FC= () => {
    const [searchString, changeSearchString]= useState('');
@@ -23,9 +23,9 @@ export GoogleBooks: React.FC= () => {
       <Body>
           <Title> Google Books searching </Title>
         <SearchForm>
-         <Inputplaceholder='検索ワードを入力してね！' onChange={event => changeSearchString(event.target.value)} />
+         <Inputplaceholder='Type some texts ！' onChange={event => changeSearchString(event.target.value)} />
             <SearchButton onClick={event => handleOnSearchButton(event)} disabled={!searchString}>
-                検索
+                Searching
             </SearchButton>
         </SearchForm>
           {VolumeList.kind && <SearchResult  volumeList={volumelis}/>}
