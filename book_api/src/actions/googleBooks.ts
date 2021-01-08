@@ -4,5 +4,7 @@ import { VolumeList } from "../models/Volume";
 const actionCreator = actionCreatorFactory('googleBooks');
 
 export const GoogleBooksActions ={
-    setVolumes: actionCreator<VolumeList>('setVolumes')
+    getVolumes: actionCreator<string>('getVolumes'),
+    setVolumes: actionCreator<VolumeList>('setVolumes'),
+    setIsSearching: actionCreator<boolean>('setIsSearching'),
 };
